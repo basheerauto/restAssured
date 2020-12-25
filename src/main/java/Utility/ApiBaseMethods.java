@@ -4,9 +4,7 @@ import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.testng.Assert;
-
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.regex.Pattern;
 
@@ -78,7 +76,6 @@ public static String searchUser(String searchUserName)
         return postsList;
     }
 
-
     public static ArrayList<String> getEmailAdresses(Integer[] PostId)  {
         RestAssured.baseURI = ConstantData.BASE_URI;
         RequestSpecification httpRequest = RestAssured.given();
@@ -93,8 +90,27 @@ public static String searchUser(String searchUserName)
                     .read("$[?(@.postId == " + pIds + ")].email");
             String postedEmail = fetchEmaiAddress.toString();
             System.out.println("-------------Email Addresses of the PostID# " + pIds + "----------" + postedEmail);
+
             emailList.add(postedEmail);
         }
+        return emailList;
+    }
+
+    public static ArrayList<String> getEmailAdressesByPostId(int PostId) {
+        RestAssured.baseURI = ConstantData.BASE_URI;
+        RequestSpecification httpRequest = RestAssured.given();
+        Response response = httpRequest.get("/comments");
+        int code = response.getStatusCode();
+        System.out.println("Status Code:" + code);
+        Assert.assertEquals(code, 200);
+        String responseString = response.asString();
+        ArrayList<String> emailList = new ArrayList<String>();
+        List<Object> fetchEmaiAddress = com.jayway.jsonpath.JsonPath.parse(responseString)
+                .read("$[?(@.postId == " + PostId + ")].email");
+        for (Object object : fetchEmaiAddress) {
+            emailList.add((String) object);
+        }
+
         return emailList;
     }
 
@@ -119,11 +135,7 @@ public static String searchUser(String searchUserName)
         return emailValidationResult;
     }
 
-
-
-
-
-    public static void main(String[] args)
+   /* public static void main(String[] args)
     {
         System.out.println("==================================================================");
         String UserName = ConstantData.USERNAME;
@@ -136,11 +148,11 @@ public static String searchUser(String searchUserName)
         System.out.println("================User posted list of comments ========================");
         System.out.println(getComments(postIds));
         System.out.println("================Email ids for User posted list of comments===========");
-        //getEmailAdresses(postIds);
-        ArrayList<String> fetchListOfEmails = getEmailAdresses(postIds);
-        boolean validEmailList = isValidEmailAddress(fetchListOfEmails);
-        }
+       ArrayList<String> fetchListOfEmails = getEmailAdresses(postIds);
+         boolean validEmailList = isValidEmailAddress(fetchListOfEmails);
 
+    }
+*/
 
         }
 
