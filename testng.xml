@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="C:/Users/bashe/Desktop/linkedin/restAssured">
+        <classes>
+            <class name="TestSuite.RegressionTestCases">
+                <methods>
+                    <include name="TC01_searchForUserName"/>
+                    <include name="TC02_searchForUserId"/>
+                    <include name="TC03_fetchCommentsByUserName"/>
+                    <include name="TC04_fetchEmailsByPostIds"/>
+                    <include name="TC05_fetchEmailsByPostIdVerifyemailpattern"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
