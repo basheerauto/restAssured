@@ -1,2 +1,83 @@
-# restAssured
-RestAssured
+<table width="623">
+<tbody>
+<tr>
+<td width="162">
+<p><strong>Problem</strong></p>
+</td>
+<td width="462">
+<p>Using Published Api : <a href="https://jsonplaceholder.typicode.com/">https://jsonplaceholder.typicode.com/</a></p>
+<p>Help the developers on your team make the feature more robust, by helping them write tests for some workflows that they might break while making progress with developing business logic</p>
+</td>
+</tr>
+<tr>
+<td width="162">
+<p><strong>Task</strong></p>
+</td>
+<td width="462">
+<p>To perform the validations for the comments for the post made by a specific user named &ldquo;Samantha&rdquo;.</p>
+</td>
+</tr>
+<tr>
+<td width="162">
+<p><strong>Expected</strong></p>
+</td>
+<td width="462">
+<p>Search for the user.</p>
+<p>Use the details fetched to make a search for the posts written by the user.</p>
+<p>For each post, fetch the comments and validate if the emails in the comment section are in the proper format.</p>
+<p>Think of various scenarios for the test workflow, all the things that can go wrong.</p>
+<p>Upload your test to Github</p>
+<p>Execute the tests successfully on Circle CI.</p>
+</td>
+</tr>
+<tr>
+<td width="162">
+<p><strong>API Calls</strong></p>
+</td>
+<td width="462">
+<p>Find User :</p>
+<p><strong>GET </strong>: https://jsonplaceholder.typicode.com/users?username=Samantha</p>
+<p>&nbsp;</p>
+<p>Search for the user posts:</p>
+<p><strong>GET</strong>:<a href="https://jsonplaceholder.typicode.com/posts?userId=3">https://jsonplaceholder.typicode.com/posts?userId=3</a></p>
+<p>&nbsp;</p>
+<p>Using each post id find the comments</p>
+<p><strong>GET</strong>: <a href="https://jsonplaceholder.typicode.com/comments?postId=21">https://jsonplaceholder.typicode.com/comments?postId=21</a></p>
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="162">
+<p><strong>Tools /Environment</strong></p>
+</td>
+<td width="462">
+<p>Intellij Idea<br /> Java<br /> RestAssured<br /> TestNG</p>
+<p>Maven<br /> GitHub<br /> CircleCI</p>
+</td>
+</tr>
+<tr>
+<td width="162">
+<p>&nbsp;</p>
+</td>
+<td width="462">
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="162">
+<p>&nbsp;</p>
+</td>
+<td width="462">
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="162">
+<p>&nbsp;</p>
+</td>
+<td width="462">
+<p>&nbsp;</p>
+</td>
+</tr>
+</tbody>
+</table>
