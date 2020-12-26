@@ -1,3 +1,11 @@
+/**
+ * Class Name:Utility
+ * Description: Declare Constant data variable and value.
+ * @author  Basheer Ahamed
+ * @version 1.0
+ * @since   12/26/2020   */
+
+
 package Utility;
 
 public class ConstantData {
