@@ -4,6 +4,8 @@ import Utility.ApiBaseMethods;
 import Utility.ConstantData;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import java.net.MalformedURLException;
 import java.util.ArrayList;
 
 
@@ -49,5 +51,50 @@ public class RegressionTestCases {
         }
     }
 
+    //================================Negative Testcases =============================
+    @Test
+    public void TC06_searchForInvalidUserName()  {
+        String userName = "Jackson";
+        System.out.println("UserName====>" + userName);
+        String searchResult = ApiBaseMethods.searchUser(userName);
+        Assert.assertNotEquals(userName, searchResult);
+        System.out.println("Search for the user " + searchResult + ": is Not found!!!");
+    }
 
+
+    @Test
+    public void TC07_searchFornullUsernameUserId()  {
+        String UserName = "";
+        int userId = ApiBaseMethods.getUserId(UserName);
+        Assert.assertNotNull(userId, "UserId Does Not Exists");
+        System.out.println(userId);
+    }
+
+    @Test
+    public void TC08_fetchCommentsByUnknownUserName()  {
+        String userName = "UnknowUser";
+        int userId = ApiBaseMethods.getUserId(userName);
+        Integer[] postId = ApiBaseMethods.getPostId(userId);
+        Assert.assertNotNull(ApiBaseMethods.getComments(postId), "Comments are Not Listed Out for the User");
+    }
+
+    @Test
+    public void TC09_fetchEmailsByUnknownUserPostIds()  {
+        String userName = "UnknowUser";
+        int userId = ApiBaseMethods.getUserId(userName);
+        Integer[] postId = ApiBaseMethods.getPostId(userId);
+        Assert.assertNotNull(ApiBaseMethods.getEmailAdresses(postId), "Email Addresses are Not Listed Out for the User");
+    }
+
+    @Test
+    public void TC10_fetchEmailsByUserPostId()  {
+        String userName = ConstantData.USERNAME;
+        int userId = ApiBaseMethods.getUserId(userName);
+        int postId = 201;
+        ArrayList<String> emailList = ApiBaseMethods.getEmailAdressesByPostId(postId);
+        Assert.assertNotNull(emailList, "Email Addresses are Not Listed Out for the User");
+        boolean isValidEmailList = ApiBaseMethods.isValidEmailAddress(emailList);
+        Assert.assertTrue(isValidEmailList, "Emails in the list are Not valid");
+
+    }
 }

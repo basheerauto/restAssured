@@ -1,3 +1,12 @@
+<p> </p>
+<table width="625">
+<tbody>
+<tr>
+<td style="text-align: center;" width="625"><span style="text-align: center; color: #0000ff;">FreeNow -Backend Test Challenge</span></td>
+</tr>
+</tbody>
+</table>
+<p> </p>
 <table width="623">
 <tbody>
 <tr>
@@ -14,7 +23,7 @@
 <p><strong>Task</strong></p>
 </td>
 <td width="462">
-<p>To perform the validations for the comments for the post made by a specific user named &ldquo;Samantha&rdquo;.</p>
+<p>To perform the validations for the comments for the post made by a specific user named “Samantha”.</p>
 </td>
 </tr>
 <tr>
@@ -36,14 +45,14 @@
 </td>
 <td width="462">
 <p>Find User :</p>
-<p><strong>GET </strong>: https://jsonplaceholder.typicode.com/users?username=Samantha</p>
-<p>&nbsp;</p>
+<p><strong>GET </strong>: ttps://jsonplaceholder.typicode.com/users?username=Samantha</p>
+<p> </p>
 <p>Search for the user posts:</p>
 <p><strong>GET</strong>:<a href="https://jsonplaceholder.typicode.com/posts?userId=3">https://jsonplaceholder.typicode.com/posts?userId=3</a></p>
-<p>&nbsp;</p>
+<p> </p>
 <p>Using each post id find the comments</p>
 <p><strong>GET</strong>: <a href="https://jsonplaceholder.typicode.com/comments?postId=21">https://jsonplaceholder.typicode.com/comments?postId=21</a></p>
-<p>&nbsp;</p>
+<p> </p>
 </td>
 </tr>
 <tr>
@@ -57,26 +66,21 @@
 </tr>
 <tr>
 <td width="162">
-<p>&nbsp;</p>
+<p><strong>Regression Scenarios</strong></p>
 </td>
 <td width="462">
-<p>&nbsp;</p>
-</td>
-</tr>
-<tr>
-<td width="162">
-<p>&nbsp;</p>
-</td>
-<td width="462">
-<p>&nbsp;</p>
-</td>
-</tr>
-<tr>
-<td width="162">
-<p>&nbsp;</p>
-</td>
-<td width="462">
-<p>&nbsp;</p>
+<p><strong>Positive Usecases</strong></p>
+<p>TC01_searchForUserName</p>
+<p>TC02_searchForUserId</p>
+<p>TC03_fetchCommentsByUserName</p>
+<p>TC04_fetchEmailsByPostIds</p>
+<p>TC05_fetchEmailsByPostIdVerifyemailpattern</p>
+<p><strong>Negative Usecases          </strong></p>
+<p>TC06_searchForInvalidUserName</p>
+<p>TC07_searchFornullUsernameUserId</p>
+<p>TC08_fetchCommentsByUnknownUserName</p>
+<p>TC09_fetchEmailsByUnknownUserPostIds</p>
+<p>TC10_fetchEmailsByUserPostId</p>
 </td>
 </tr>
 </tbody>

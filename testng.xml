@@ -10,6 +10,11 @@
                     <include name="TC03_fetchCommentsByUserName"/>
                     <include name="TC04_fetchEmailsByPostIds"/>
                     <include name="TC05_fetchEmailsByPostIdVerifyemailpattern"/>
+                    <include name="TC06_searchForInvalidUserName"/>
+                    <include name="TC07_searchFornullUsernameUserId"/>
+                    <include name="TC08_fetchCommentsByUnknownUserName"/>
+                    <include name="TC09_fetchEmailsByUnknownUserPostIds"/>
+                    <include name="TC10_fetchEmailsByUserPostId"/>
                 </methods>
             </class>
         </classes>
