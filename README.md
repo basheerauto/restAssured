@@ -2,7 +2,6 @@
 <table width="625">
 <tbody>
 <tr>
-<td style="text-align: center;" width="625"><span style="text-align: center; color: #0000ff;">FreeNow -Backend Test Challenge</span></td>
 </tr>
 </tbody>
 </table>
